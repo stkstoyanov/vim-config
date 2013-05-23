@@ -48,6 +48,8 @@ set directory=~/.tmp
 
 nnoremap ; :
 nnoremap ;; ;
+vnoremap ; :
+vnoremap ;; ;
 
 set clipboard+=unnamedplus
 
