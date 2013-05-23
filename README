@@ -1,0 +1,2 @@
+#INSTALLING VIMRC:
+ln -s ~/.vim/vimrc ~/.vimrc

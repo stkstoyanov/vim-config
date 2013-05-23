@@ -1,0 +1,3 @@
+-I/usr/local/include/QtCore
+-I/usr/local/include/QtOpenGL
+-I/usr/local/include/QtGui
