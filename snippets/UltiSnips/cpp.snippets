@@ -62,7 +62,15 @@ else
 }
 endsnippet
 
-snippet main "C++ int main function" b
+snippet m "C++ main function" b
+int main(int argc, char *argv[])
+{
+  $0
+  return 0;
+}
+endsnippet
+
+snippet mc "C main function" b
 int main(int argc, char *argv[])
 {
   $0

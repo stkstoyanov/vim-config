@@ -198,11 +198,11 @@ let g:syntastic_cpp_config_file='.clang_complete'
 let g:syntastic_cpp_check_header=1
 
 " -----------------------------------------------------------------------------
-" UlTISNIPS
+" ULTISNIPS
 " -----------------------------------------------------------------------------
 
 " UltiSnips mappings
 let g:UltiSnipsJumpForwardTrigger='<C-F>'
 let g:UltiSnipsJumpBackwardTrigger='<C-B>'
-let g:UltiSnipsSnippetsDir='~/.vim/snippets'
+let g:UltiSnipsSnippetsDir='~/.vim/snippets/UltiSnips'
 map <Leader><Leader>s <Esc>:call UltiSnips_ListSnippets()<CR>
