@@ -202,7 +202,7 @@ let g:syntastic_cpp_check_header=1
 " -----------------------------------------------------------------------------
 
 " UltiSnips mappings
-let g:UltiSnipsJumpForwardTrigger='<C-F>'
-let g:UltiSnipsJumpBackwardTrigger='<C-B>'
-let g:UltiSnipsSnippetsDir='~/.vim/snippets/UltiSnips'
+let g:UltiSnipsJumpForwardTrigger='<C-f>'
+let g:UltiSnipsJumpBackwardTrigger='<C-b>'
+let g:UltiSnipsSnippetDirectories=['../../snippets/UltiSnips']
 map <Leader><Leader>s <Esc>:call UltiSnips_ListSnippets()<CR>
