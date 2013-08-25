@@ -4,6 +4,32 @@ execute pathogen#helptags()
 
 filetype plugin indent on
 
+" Always use unix-style line endings
+set ff=unix
+
+" Default Indents
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+if has('autocmd')
+  " Maximize GVim on startup (Windows)
+  if has('win32') && has('gui_running')
+    au GUIEnter * simalt ~x
+  endif
+
+  " File-specific indents
+  au FileType cpp setlocal ts=2 sts=2 sw=2 expandtab
+
+  " File type assignment
+  au BufRead,BufNewFile *.vfl set filetype=vex
+endif
+
+set encoding=utf-8
+
+set wrap linebreak
+
 syntax on
 set foldmethod=syntax
 " Fold focus around a single fold
@@ -32,6 +58,17 @@ set guitablabel=%N:%M%t
 " Modify the tab label for vim
 set tabline=%!TabLine()
 
+" Status Line
+set statusline=                                     "Initialize
+set statusline+=\ [%n]                              "Buffer Number
+set statusline+=%t                                  "Filename Tail
+set statusline+=%m                                  "Modified Flag
+set statusline+=\ %y                                "File Type
+set statusline+=\ [%{''.(&fenc!=''?&fenc:&enc).''}] "Encoding
+set statusline+=%=                                  "Right Align
+set statusline+=[Row:\ %l/%L\ (%p%%),               "Row/Total Rows (%)
+set statusline+=\ Col:\ %c]\                        "Column
+
 " Taglist options
 let Tlist_Use_Left_Window=1
 let Tlist_Auto_Open=0
@@ -42,22 +79,23 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_File_Fold_Auto_Close = 1
 nmap <Leader><Leader>t :Tlist<cr>
 
-" Put swap files in /tmp file in the home directory
-set backupdir=~/.tmp
-set directory=~/.tmp
+" Put swap files in the system's temporary directory
+if has('win32')
+  set backupdir=$TEMP
+  set directory=$TEMP
+else
+  set backupdir=~/.tmp
+  set directory=~/.tmp
+endif
 
 nnoremap ; :
 nnoremap ;; ;
 vnoremap ; :
 vnoremap ;; ;
 
-set clipboard+=unnamedplus
-
-" Indents
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+if has('unix')
+  set clipboard+=unnamedplus
+endif
 
 " Don't indent class scope declarations
 set cino+=g0
@@ -65,10 +103,11 @@ set cino+=g0
 set cino+=(0
 " Remove indent for namespaces
 set cino+=N-s
-
 " Indent mappings
-noremap <Tab> >>
-noremap <S-Tab> <<
+nnoremap <A-]> >>
+nnoremap <A-[> <<
+vnoremap <A-]> >gv
+vnoremap <A-[> <gv
 
 " Enable search highlighting
 set hlsearch
@@ -78,20 +117,25 @@ nnoremap <silent> <Leader><Leader>c :let @/ = ''<CR>
 " Configure basic theme settings
 set t_Co=256
 colorscheme molokai
-set guifont=Inconsolata\ 11
+" Font setup
+if has('win32')
+  set guifont=Consolas:h11:cANSI
+else
+  set guifont=Inconsolata\ 11
+endif
 " Horizontal column
 set colorcolumn=80
 hi ColorColumn ctermbg=234
-" Hide the tilde line symbol
-hi NonText ctermfg=bg
-hi NonText guifg=bg
 " A more useful matching parenthesis highlighting
 hi MatchParen cterm=none ctermbg=none ctermfg=166
 " Remove the startup text
 set shortmess+=I
 
+nnoremap <silent> <F2> :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
+
 " Display a number of lines below or above the current line
-set scrolloff=8
+"set scrolloff=8
 
 set textwidth=80
 
@@ -119,14 +163,6 @@ vnoremap <C-w>h <Esc><C-w><S-h>v
 vnoremap <C-w>j <Esc><C-w><S-j>v
 vnoremap <C-w>k <Esc><C-w><S-k>v
 vnoremap <C-w>l <Esc><C-w><S-l>v
-inoremap <C-w>h <C-o><C-w><S-h>
-inoremap <C-w>j <C-o><C-w><S-j>
-inoremap <C-w>k <C-o><C-w><S-k>
-inoremap <C-w>l <C-o><C-w><S-l>
-" Maximize window
-nnoremap <silent> <C-w>m :MaximizerToggle<CR>
-vnoremap <silent> <C-w>m :MaximizerToggle<CR>gv
-inoremap <silent> <C-w>m <C-O>:MaximizerToggle<CR>
 
 " -----------------------------------------------------------------------------
 " INSERT MODE EDITING
@@ -157,12 +193,12 @@ set backspace=2
 set fillchars=""
 
 " Paste toggle for preserving indentations
-set pastetoggle=<F2>
+set pastetoggle=<F3>
 
 " Line numbers
 set relativenumber
 " Toggle relative numbers
-nnoremap <silent> <F3> :exec &nu == 0 ? 'set nu!' : 'set rnu!'<CR>
+nnoremap <silent> <F1> :exec &nu == 0 ? 'set nu!' : 'set rnu!'<CR>
 
 " Insert empty lines before and after without going into insert mode
 nnoremap <A-k> :normal O<CR>j
@@ -176,6 +212,10 @@ set completeopt=menu,menuone
 " CLANG_COMPLETE
 " -----------------------------------------------------------------------------
 
+if has('win32')
+  let g:clang_library_path='C:\lib\libclang'
+endif
+let g:clang_sort_algo='alpha'
 let g:clang_use_library=1
 let g:clang_complete_copen=1
 let g:clang_complete_macros=1
@@ -191,12 +231,17 @@ let g:clang_snippets_engine='ultisnips'
 " SYNTASTIC
 " -----------------------------------------------------------------------------
 
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+if has('win32')
+  let g:syntastic_error_symbol='×'
+  let g:syntastic_warning_symbol='‼'
+else
+  let g:syntastic_error_symbol='✗'
+  let g:syntastic_warning_symbol='⚠'
+endif
 let g:syntastic_cpp_compiler='clang++'
 let g:syntastic_cpp_config_file='.clang_complete'
 let g:syntastic_cpp_check_header=1
-
+ 
 " -----------------------------------------------------------------------------
 " ULTISNIPS
 " -----------------------------------------------------------------------------

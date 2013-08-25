@@ -1,6 +1,12 @@
 Installation
 ------------
 
+Clone the repository with all of its submodules:
+```
+cd ~
+git clone --recursive git@github.com:stkstoyanov/vim-config.git .vim
+```
+
 Create a symbolic link for the .vimrc file:
 
 ```
