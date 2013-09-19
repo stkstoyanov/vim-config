@@ -104,10 +104,10 @@ set cino+=(0
 " Remove indent for namespaces
 set cino+=N-s
 " Indent mappings
-nnoremap <A-]> >>
-nnoremap <A-[> <<
-vnoremap <A-]> >gv
-vnoremap <A-[> <gv
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " Enable search highlighting
 set hlsearch
