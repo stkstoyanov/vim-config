@@ -124,7 +124,9 @@ else
   set guifont=Inconsolata\ 11
 endif
 " Horizontal column
-set colorcolumn=80
+if version >= 703
+  set colorcolumn=80
+endif
 hi ColorColumn ctermbg=234
 " A more useful matching parenthesis highlighting
 hi MatchParen cterm=none ctermbg=none ctermfg=166
@@ -196,7 +198,11 @@ set fillchars=""
 set pastetoggle=<F3>
 
 " Line numbers
-set relativenumber
+if version >= 703
+  set relativenumber
+else
+  set number
+endif
 " Toggle relative numbers
 nnoremap <silent> <F1> :exec &nu == 0 ? 'set nu!' : 'set rnu!'<CR>
 
@@ -204,8 +210,10 @@ nnoremap <silent> <F1> :exec &nu == 0 ? 'set nu!' : 'set rnu!'<CR>
 nnoremap <A-k> :normal O<CR>j
 nnoremap <A-j> :normal o<CR>k
 
-set conceallevel=2
-set concealcursor=vin
+if version >= 703
+  set conceallevel=2
+  set concealcursor=vin
+endif
 set completeopt=menu,menuone
 
 " -----------------------------------------------------------------------------
