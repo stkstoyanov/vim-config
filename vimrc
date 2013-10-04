@@ -198,13 +198,17 @@ set fillchars=""
 set pastetoggle=<F3>
 
 " Line numbers
-if version >= 703
+if version == 703
+  set relativenumber
+  " Toggle relative numbers
+  nnoremap <silent> <F1> :exec &nu == 0 ? 'set nu!' : 'set rnu!'<CR>
+elseif version >= 704
+  " Use the new hybrid line number mode
+  set number
   set relativenumber
 else
   set number
 endif
-" Toggle relative numbers
-nnoremap <silent> <F1> :exec &nu == 0 ? 'set nu!' : 'set rnu!'<CR>
 
 " Insert empty lines before and after without going into insert mode
 nnoremap <A-k> :normal O<CR>j
