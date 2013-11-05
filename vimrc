@@ -263,3 +263,9 @@ let g:UltiSnipsJumpForwardTrigger='<C-f>'
 let g:UltiSnipsJumpBackwardTrigger='<C-b>'
 let g:UltiSnipsSnippetDirectories=['../../snippets/UltiSnips']
 map <Leader><Leader>s <Esc>:call UltiSnips_ListSnippets()<CR>
+
+" -----------------------------------------------------------------------------
+" PYTHON-MODE
+" -----------------------------------------------------------------------------
+
+let g:pymode_rope=0

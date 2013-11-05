@@ -28,3 +28,9 @@
 [submodule "bundle/vim-tabline"]
 	path = bundle/vim-tabline
 	url = git@github.com:stkstoyanov/vim-tabline.git
+[submodule "bundle/jedi-vim"]
+	path = bundle/jedi-vim
+	url = git@github.com:davidhalter/jedi-vim.git
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = git@github.com:klen/python-mode.git
