@@ -21,6 +21,9 @@ if has('autocmd')
 
   " File-specific indents
   au FileType cpp setlocal ts=2 sts=2 sw=2 expandtab
+  " Add Maya python library when editing python files
+  au FileType python let $PYTHONPATH .= ';' .
+  \'usr/autodesk/maya2013-x64/devkit/other/pymel/extras/completion/py'
 
   " File type assignment
   au BufRead,BufNewFile *.vfl set filetype=vex
@@ -269,3 +272,17 @@ map <Leader><Leader>s <Esc>:call UltiSnips_ListSnippets()<CR>
 " -----------------------------------------------------------------------------
 
 let g:pymode_rope=0
+let g:pymode_lint_write=0
+
+" -----------------------------------------------------------------------------
+" JEDI-VIM
+" -----------------------------------------------------------------------------
+
+let g:jedi#popup_on_dot=0
+
+" -----------------------------------------------------------------------------
+" VIM-SESSION
+" -----------------------------------------------------------------------------
+
+let g:session_directory='~/.sessions'
+let g:session_autosave = 'no'
