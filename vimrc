@@ -27,6 +27,7 @@ if has('autocmd')
 
   " File type assignment
   au BufRead,BufNewFile *.vfl set filetype=vex
+  au BufRead,BufNewFile *.cpg set filetype=cpp | SyntasticToggleMode
 endif
 
 set encoding=utf-8

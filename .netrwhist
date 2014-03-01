@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/stoyan/.vim/snippets/UltiSnips'
+let g:netrw_dirhist_2='/mnt/Data/Code/gaalop_bugs/src/IntersectionBug'
+let g:netrw_dirhist_3='/mnt/Data/Code/Ik2bCGA/src/gaalop_solver'
+let g:netrw_dirhist_4='/mnt/Data/Code/Ik2bCGA/src/gaalet_solver'
