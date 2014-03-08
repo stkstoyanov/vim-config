@@ -21,6 +21,7 @@ if has('autocmd')
 
   " File-specific indents
   au FileType cpp setlocal ts=2 sts=2 sw=2 expandtab
+  au FileType html setlocal foldmethod=manual
   " Add Maya python library when editing python files
   au FileType python let $PYTHONPATH .= ';' .
   \'usr/autodesk/maya2013-x64/devkit/other/pymel/extras/completion/py'
@@ -108,10 +109,10 @@ set cino+=(0
 " Remove indent for namespaces
 set cino+=N-s
 " Indent mappings
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+"nnoremap <Tab> >>
+"nnoremap <S-Tab> <<
+"vnoremap <Tab> >gv
+"vnoremap <S-Tab> <gv
 
 " Enable search highlighting
 set hlsearch
@@ -205,7 +206,7 @@ set pastetoggle=<F3>
 if version == 703
   set relativenumber
   " Toggle relative numbers
-  nnoremap <silent> <F1> :exec &nu == 0 ? 'set nu!' : 'set rnu!'<CR>
+  nnoremap <silent> <F4> :exec &nu == 0 ? 'set nu!' : 'set rnu!'<CR>
 elseif version >= 704
   " Use the new hybrid line number mode
   set number
