@@ -93,11 +93,6 @@ else
   set directory=~/.tmp
 endif
 
-nnoremap ; :
-nnoremap ;; ;
-vnoremap ; :
-vnoremap ;; ;
-
 if has('unix')
   set clipboard+=unnamedplus
 endif
