@@ -1,13 +1,28 @@
+global !p
+import vim
+
+# Return the column index of the first non-whitespace character
+def column_begin():
+    line = int(vim.eval('line(".")'))
+    s = vim.current.buffer[line-1]
+    return len(s) - len(s.lstrip())
+
+def make_line(twidth, comment):
+    lwidth = int(vim.eval('&textwidth')) or 80
+    lwidth -= column_begin() + 1
+    swidth = (lwidth - twidth - len(comment)) // 2
+    ewidth = lwidth - swidth - twidth - len(comment)
+    sline = comment + '-'*swidth
+    eline = '-'*ewidth
+    return sline, eline
+endglobal
+
 snippet ih "include" b
 #include "${1:header}"$0
 endsnippet
 
 snippet il "include" b
 #include <${1:library}>$0
-endsnippet
-
-snippet lc "line comment" b
-//-----------------------------------------------------------------------------
 endsnippet
 
 snippet cl  "C++ class definition" b
@@ -80,4 +95,18 @@ int main(int argc, char *argv[])
   ${1:/* code */}
   return 0;
 }
+endsnippet
+
+snippet l "Insert a comment in a line style" b
+`!p
+line = make_line(len(t[1]) + 2, '//')
+snip.rv = line[0]` ${1:Content} `!p
+line = make_line(len(t[1]) + 2, '//')
+snip.rv = line[1]`$0
+endsnippet
+
+snippet lb "Insert a comment in a line style" b
+`!p
+line = make_line(0, '//')
+snip.rv = line[0] + line[1]`$0
 endsnippet

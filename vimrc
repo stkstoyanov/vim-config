@@ -25,6 +25,7 @@ if has('autocmd')
   " Add Maya python library when editing python files
   au FileType python let $PYTHONPATH .= ';' .
   \'usr/autodesk/maya2013-x64/devkit/other/pymel/extras/completion/py'
+  au FileType python set comments=sl:''',mb:#,ex:''',:#
 
   " File type assignment
   au BufRead,BufNewFile *.vfl set filetype=vex
@@ -33,7 +34,7 @@ endif
 
 set encoding=utf-8
 
-set wrap linebreak
+set wrap
 
 syntax on
 set foldmethod=syntax
