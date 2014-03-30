@@ -85,12 +85,13 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_File_Fold_Auto_Close = 1
 nmap <Leader><Leader>t :Tlist<cr>
 
+set backup
 " Put swap files in the system's temporary directory
 if has('win32')
   set backupdir=$TEMP
   set directory=$TEMP
 else
-  set backupdir=~/.tmp
+  set backupdir=~/.backup
   set directory=~/.tmp
 endif
 

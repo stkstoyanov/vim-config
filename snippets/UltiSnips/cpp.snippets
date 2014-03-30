@@ -110,3 +110,25 @@ snippet lb "Insert a comment in a line style" b
 line = make_line(0, '//')
 snip.rv = line[0] + line[1]`$0
 endsnippet
+
+snippet ds "Doxygen comment - single line" b
+`!p
+line = make_line(0, '//')
+snip.rv = line[0] + line[1]`
+//! \brief $0
+`!p
+line = make_line(0, '//')
+snip.rv = line[0] + line[1]`
+endsnippet
+
+snippet dm "Doxygen comment - multiple lines" b
+`!p
+line = make_line(0, '//')
+snip.rv = line[0] + line[1]`
+/*!
+ * \brief $0
+ */
+`!p
+line = make_line(0, '//')
+snip.rv = line[0] + line[1]`
+endsnippet
