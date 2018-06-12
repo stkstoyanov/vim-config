@@ -1,48 +1,48 @@
-[submodule "bundle/Auto-Pairs"]
-	path = bundle/Auto-Pairs
+[submodule "plugin/Auto-Pairs"]
+	path = plugin/Auto-Pairs
 	url = git@github.com:vim-scripts/Auto-Pairs.git
-[submodule "bundle/clang_complete"]
-	path = bundle/clang_complete
+[submodule "plugin/clang_complete"]
+	path = plugin/clang_complete
 	url = git@github.com:Rip-Rip/clang_complete.git
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
+[submodule "plugin/ctrlp.vim"]
+	path = plugin/ctrlp.vim
 	url = git@github.com:kien/ctrlp.vim.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
+[submodule "plugin/nerdcommenter"]
+	path = plugin/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
-[submodule "bundle/rename.vim"]
-	path = bundle/rename.vim
+[submodule "plugin/rename.vim"]
+	path = plugin/rename.vim
 	url = git@github.com:danro/rename.vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
+[submodule "plugin/syntastic"]
+	path = plugin/syntastic
 	url = git@github.com:scrooloose/syntastic.git
-[submodule "bundle/tabular"]
-	path = bundle/tabular
+[submodule "plugin/tabular"]
+	path = plugin/tabular
 	url = git@github.com:godlygeek/tabular.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
+[submodule "plugin/ultisnips"]
+	path = plugin/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
-[submodule "bundle/vim-easymotion"]
-	path = bundle/vim-easymotion
+[submodule "plugin/vim-easymotion"]
+	path = plugin/vim-easymotion
 	url = git@github.com:Lokaltog/vim-easymotion.git
-[submodule "bundle/vim-tabline"]
-	path = bundle/vim-tabline
+[submodule "plugin/vim-tabline"]
+	path = plugin/vim-tabline
 	url = git@github.com:stkstoyanov/vim-tabline.git
-[submodule "bundle/jedi-vim"]
-	path = bundle/jedi-vim
+[submodule "plugin/jedi-vim"]
+	path = plugin/jedi-vim
 	url = git@github.com:davidhalter/jedi-vim.git
-[submodule "bundle/python-mode"]
-	path = bundle/python-mode
+[submodule "plugin/python-mode"]
+	path = plugin/python-mode
 	url = git@github.com:klen/python-mode.git
-[submodule "bundle/vim-session"]
-	path = bundle/vim-session
+[submodule "plugin/vim-session"]
+	path = plugin/vim-session
 	url = git@github.com:xolox/vim-session.git
-[submodule "bundle/vim-misc"]
-	path = bundle/vim-misc
+[submodule "plugin/vim-misc"]
+	path = plugin/vim-misc
 	url = git@github.com:xolox/vim-misc.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
+[submodule "plugin/vim-surround"]
+	path = plugin/vim-surround
 	url = git@github.com:tpope/vim-surround.git
-[submodule "bundle/vim-repeat"]
-	path = bundle/vim-repeat
+[submodule "plugin/vim-repeat"]
+	path = plugin/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
