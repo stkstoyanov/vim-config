@@ -1,48 +1,48 @@
-[submodule "plugin/Auto-Pairs"]
-	path = plugin/Auto-Pairs
-	url = git@github.com:vim-scripts/Auto-Pairs.git
-[submodule "plugin/clang_complete"]
-	path = plugin/clang_complete
-	url = git@github.com:Rip-Rip/clang_complete.git
-[submodule "plugin/ctrlp.vim"]
-	path = plugin/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim.git
-[submodule "plugin/nerdcommenter"]
-	path = plugin/nerdcommenter
-	url = git@github.com:scrooloose/nerdcommenter.git
-[submodule "plugin/rename.vim"]
-	path = plugin/rename.vim
-	url = git@github.com:danro/rename.vim.git
-[submodule "plugin/syntastic"]
-	path = plugin/syntastic
-	url = git@github.com:scrooloose/syntastic.git
-[submodule "plugin/tabular"]
-	path = plugin/tabular
-	url = git@github.com:godlygeek/tabular.git
-[submodule "plugin/ultisnips"]
-	path = plugin/ultisnips
-	url = git@github.com:SirVer/ultisnips.git
-[submodule "plugin/vim-easymotion"]
-	path = plugin/vim-easymotion
-	url = git@github.com:Lokaltog/vim-easymotion.git
-[submodule "plugin/vim-tabline"]
-	path = plugin/vim-tabline
-	url = git@github.com:stkstoyanov/vim-tabline.git
-[submodule "plugin/jedi-vim"]
-	path = plugin/jedi-vim
-	url = git@github.com:davidhalter/jedi-vim.git
-[submodule "plugin/python-mode"]
-	path = plugin/python-mode
-	url = git@github.com:klen/python-mode.git
-[submodule "plugin/vim-session"]
-	path = plugin/vim-session
-	url = git@github.com:xolox/vim-session.git
-[submodule "plugin/vim-misc"]
-	path = plugin/vim-misc
-	url = git@github.com:xolox/vim-misc.git
-[submodule "plugin/vim-surround"]
-	path = plugin/vim-surround
-	url = git@github.com:tpope/vim-surround.git
-[submodule "plugin/vim-repeat"]
-	path = plugin/vim-repeat
-	url = git@github.com:tpope/vim-repeat.git
+[submodule "pack/plugins/start/Auto-Pairs"]
+	path = pack/plugins/start/Auto-Pairs
+	url = https://github.com/vim-scripts/Auto-Pairs.git
+[submodule "pack/plugins/start/clang_complete"]
+	path = pack/plugins/start/clang_complete
+	url = https://github.com/Rip-Rip/clang_complete.git
+[submodule "pack/plugins/start/ctrlp.vim"]
+	path = pack/plugins/start/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "pack/plugins/start/nerdcommenter"]
+	path = pack/plugins/start/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "pack/plugins/start/rename.vim"]
+	path = pack/plugins/start/rename.vim
+	url = https://github.com/danro/rename.vim.git
+[submodule "pack/plugins/start/syntastic"]
+	path = pack/plugins/start/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "pack/plugins/start/tabular"]
+	path = pack/plugins/start/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "pack/plugins/start/ultisnips"]
+	path = pack/plugins/start/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "pack/plugins/start/vim-easymotion"]
+	path = pack/plugins/start/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "pack/plugins/start/vim-tabline"]
+	path = pack/plugins/start/vim-tabline
+	url = https://github.com/stkstoyanov/vim-tabline.git
+[submodule "pack/plugins/start/jedi-vim"]
+	path = pack/plugins/start/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "pack/plugins/start/python-mode"]
+	path = pack/plugins/start/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "pack/plugins/start/vim-session"]
+	path = pack/plugins/start/vim-session
+	url = https://github.com/xolox/vim-session.git
+[submodule "pack/plugins/start/vim-misc"]
+	path = pack/plugins/start/vim-misc
+	url = https://github.com/xolox/vim-misc.git
+[submodule "pack/plugins/start/vim-surround"]
+	path = pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "pack/plugins/start/vim-repeat"]
+	path = pack/plugins/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
